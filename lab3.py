@@ -95,6 +95,13 @@ if __name__ == "__main__":
     err.clear()
 
 
+    for i in range(1, 60, 5):
+        e, X_p = predict_x_define_e(N, i/100, X, 8000, 4)
+        err.append(e)
+    drow_e(err, [i/100 for i in range(1, 60, 5)], 'n', 'E', 'E(n) при m =8000 p = 4')
+    err.clear()
+
+
     # вычисление ошибки для разого кол-ва обучающих эпох
     for i in range(1, 20, 1):
         e, X_p = predict_x_define_e(N, n, X, i, 4)
